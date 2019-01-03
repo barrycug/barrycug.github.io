@@ -46,7 +46,35 @@
 	
 
 	
-		
+		<h1 id="MapBox简介"><a href="#MapBox简介" class="headerlink" title="MapBox简介"></a>MapBox简介</h1><p>Mapbox是目前最流行的地图可视化工具，使用Mapbox可以制作出酷炫的地图应用。<br>Mapbox核心的工具都是以开源的方式贡献出来，地址为：<br><a href="https://github.com/mapbox/" target="_blank" rel="noopener">github</a><br>Mapbox制作的一些漂亮的地图：<br><a href="https://www.mapbox.com/gallery/" target="_blank" rel="noopener">gallery</a></p>
+<p>#教程大纲<br>本次教程会以step by step的方式，介绍如何从零开始制作一副自己的地图。主要内容包括：</p>
+<ul>
+<li>数据获取与工具下载</li>
+<li>数据预处理</li>
+<li>Vector tile 生成</li>
+<li>Vector tile 托管与服务发布</li>
+<li>字体、图片资源处理</li>
+<li>制图</li>
+</ul>
+<p>#数据获取与工具下载</p>
+<p>##数据获取<br>目前从互联网上能够容易获取到的数据为OSM数据，OSM数据可以从<br><a href="https://planet.openstreetmap.org/" target="_blank" rel="noopener">https://planet.openstreetmap.org/</a>下载，在此网站可以下载OSM所有数据，有两种格式可以选择，压缩的osm格式(XML)和pbf格式。<br>另外<a href="http://download.geofabrik.de" target="_blank" rel="noopener">http://download.geofabrik.de</a>网站还提供shp格式数据下载，shp格式数据是已经分层处理好的数据，比较容易使用，因此建议大家从geofabrik网站下载数据。<br>本教程以芬兰的数据为例进行介绍，因此在此先现在芬兰的shp数据。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget &quot;http://download.geofabrik.de/europe/finland-latest-free.shp.zip&quot;</span><br></pre></td></tr></table></figure></p>
+<p>数据解压后，如图：<br><figure class="figure"><img src="/images/1/1.png" alt=""></figure><br>可以看到，数据已经分好层，包括builds,poi,natural,landuse,water,places等很多层。每个层中包含分类好的数据。<br>使用QGIS打开，效果如图：<br><figure class="figure"><img src="/images/1/1.png" alt=""></figure></p>
+<p>##工具</p>
+<p>###数据处理</p>
+<ul>
+<li>osm2shp 用来将osm数据转成shp数据，如果直接下载的是shp数据，则不需要使用此工具</li>
+<li>QGIS 主要用来查看、编辑数据，并将数据从shp转成geojson</li>
+<li>python +gdal+ogr 不是必须，主要用来批量处理数据，比如批量将图层导出成geojson<br>###vector tile 生成与预览</li>
+<li><a href="https://github.com/mapbox/tippecanoe" target="_blank" rel="noopener">tippecanoe</a></li>
+<li>DB Browser for sqlite</li>
+<li><a href="https://github.com/mapbox/mbview" target="_blank" rel="noopener">mbview</a><br>###vector tile 托管</li>
+<li><a href="https://github.com/mojodna/tessera" target="_blank" rel="noopener">tessera</a><br>###字体与图片资源处理</li>
+<li><a href="https://github.com/mapbox/node-fontnik" target="_blank" rel="noopener">node-fontnik</a></li>
+<li><a href="https://github.com/mapbox/spritezero" target="_blank" rel="noopener">spritezero</a><br>###制图</li>
+<li><a href="https://www.mapbox.com/mapbox-studio/" target="_blank" rel="noopener">Mapbox Studio</a></li>
+<li><a href="https://github.com/maputnik/editor" target="_blank" rel="noopener">Maputnik</a></li>
+</ul>
+
 	
 
 	
